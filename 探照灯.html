@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<canvas id="canvas" width="1024" height="650" style="border:1px solid #000;display:block;margin:50px auto"></canvas>
+	<script type="text/javascript">
+		var light = {x:1024/2,y:650/2,vx:Math.random()*10+5,vy:Math.random()*10+5};
+		var WINDOW_WIDTH = 1024;
+		var WINDOW_HEIGHT = 650;
+		window.onload=function()
+		{
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+
+			canvas.width = 1024;
+			canvas.height = 650;
+
+			setInterval(function(){draw(context);update();},40);
+
+		}
+
+		function draw(context)
+		{
+			context.clearRect(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+
+			context.save();
+
+			context.beginPath();
+			context.fillStyle = "black";
+			context.fill(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+
+
+			context.restore();
+		}
+
+		function update()
+		{
+			
+		}
+	</script>
+</body>
+</html>
